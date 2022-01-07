@@ -1,0 +1,25 @@
+---
+title: "Report"
+author: "Termont"
+date: "07/01/2022"
+output:
+  pdf_document: default
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(FactoMineR)
+
+rangs = read.csv("rangs.csv",header = TRUE, sep=";", dec=",")
+```
+
+## Analyse rangs.csv
+
+```{r echo=FALSE}
+res=PCA(rangs[,7:12],graph=FALSE)
+res$eig
+```
+
+
